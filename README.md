@@ -1,5 +1,5 @@
-# cupck-be
+cupck-be
 
-# http://localhost:8080/?name=ipan
+- http://localhost:8080/?name=ipan
 
-# tar buat aja di local databasenya cupck tablenya person
+- tar buat aja di local databasenya cupck tablenya person
