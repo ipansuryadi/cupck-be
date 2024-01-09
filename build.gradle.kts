@@ -26,6 +26,11 @@ dependencies {
     // https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-starter-webmvc-ui
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.3.0")
     implementation("org.springframework.kafka:spring-kafka")
+
+    //spring cloud stream kafka
+    implementation("org.springframework.cloud:spring-cloud-stream:4.1.0")
+    implementation("org.springframework.cloud:spring-cloud-stream-binder-kafka:4.1.0")
+
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.kafka:spring-kafka-test")
 
