@@ -31,6 +31,10 @@ dependencies {
     implementation("org.springframework.cloud:spring-cloud-stream:4.1.0")
     implementation("org.springframework.cloud:spring-cloud-stream-binder-kafka:4.1.0")
 
+    // https://mvnrepository.com/artifact/com.google.firebase/firebase-admin
+    implementation("com.google.firebase:firebase-admin:9.2.0")
+
+
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.kafka:spring-kafka-test")
 

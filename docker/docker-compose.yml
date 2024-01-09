@@ -9,10 +9,10 @@ services:
     image: confluentinc/cp-kafka:7.2.1
     container_name: kafka
     ports:
-      - "8098:8098"
+      - "9092:9092"
     depends_on:
       - zookeeper
     environment:
       KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:8098
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1

@@ -19,6 +19,7 @@ class ExampleController(
         exampleStringProducer.sendStringMessage(
             message = requestBody.message
         )
+        
     }
 
     data class RequestBodyDto(val message: String)
