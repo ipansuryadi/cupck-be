@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+
+    <!-- this enables json logging if you're not running in your local -->
+    <springProfile name="!local">
+        <appender name="JSON" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+                <providers>
+                    <timestamp>
+                        <fieldName>timestamp</fieldName>
+                        <timeZone>UTC</timeZone>
+                    </timestamp>
+                    <message/>
+                    <loggerName>
+                        <fieldName>logger</fieldName>
+                    </loggerName>
+                    <threadName/>
+                    <logLevel/>
+                    <mdc/>
+                    <stackTrace/>
+                </providers>
+            </encoder>
+        </appender>
+        <root level="info">
+            <appender-ref ref="JSON"/>
+        </root>
+    </springProfile>
+
+    <!-- this defers to default console logging if you're running in your local -->
+    <springProfile name="local">
+        <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+        <logger name="org.springframework.data.mongodb.core.MongoTemplate" level="DEBUG" />
+    </springProfile>
+
+    <!-- this initialises logging to use CONSOLE appender provided manually or by default -->
+    <root level="info">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+    <Logger name="org.apache.pdfbox" level="WARN" />
+</configuration>

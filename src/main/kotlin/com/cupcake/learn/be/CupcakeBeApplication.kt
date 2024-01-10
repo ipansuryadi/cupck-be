@@ -16,12 +16,22 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 import java.util.*
+import mu.KotlinLogging
+import org.springframework.boot.context.properties.ConfigurationPropertiesScan
+import org.springframework.data.mongodb.config.EnableMongoAuditing
+import org.springframework.scheduling.annotation.EnableAsync
 
+@ConfigurationPropertiesScan
+@EnableMongoAuditing
+@EnableAsync
 @SpringBootApplication
 class CupcakeBeApplication
 
+private val logger = KotlinLogging.logger({})
+
 fun main(args: Array<String>) {
     runApplication<CupcakeBeApplication>(*args)
+    logger.info { "Cupcake Back-End Learning Program is running!" }
 }
 
 
