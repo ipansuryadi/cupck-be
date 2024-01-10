@@ -16,5 +16,6 @@ export default defineConfig({
       '**/__snapshots__/*',
       '**/__image_snapshots__/*',
     ],
+    baseUrl: 'http://localhost:8080',
   },
 });
