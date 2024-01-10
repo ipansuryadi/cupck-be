@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "noEmit": true,
+    "sourceMap": true,
+    "target": "es5",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "isolatedModules": false,
+    "strict": true,
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable"
+    ],
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "typeRoots": [
+      "types",
+      "node_modules/@types"
+    ],
+    "types": ["cypress"],
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "."
+  },
+  "include": [
+    "**/*.ts",
+    "cypress.d.ts",
+    "cypress/e2e/**/*.spec.ts",
+    "cypress/support/**.ts",
+    "node_modules/.pnpm/@types+mocha@10.0.6/node_modules/@types/mocha/index.d.ts",
+    "node_modules/.pnpm/cypress@12.17.4/node_modules/cypress/types/cypress-global-vars.d.ts",
+    "node_modules/.pnpm/cypress@13.6.0/node_modules/cypress/types/cypress-expect.d.ts"
+  ]
+}
