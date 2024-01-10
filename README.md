@@ -16,3 +16,6 @@ fcm notes:
 - when success push we cant see in google console
 - in mobile must handle background process because the notif is received in mobile but the push notification status bar not showing
 - the firebaseAccount.json i gitignore
+
+for running cypress:
+- install node_modules using ```pnpm install```
