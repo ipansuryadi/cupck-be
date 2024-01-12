@@ -39,6 +39,10 @@ dependencies {
     implementation("io.github.microutils:kotlin-logging-jvm:$kotlinLogging")
     implementation("net.logstash.logback:logstash-logback-encoder:$logbackEncoder")
 
+    // https://mvnrepository.com/artifact/com.google.code.gson/gson
+    implementation("com.google.code.gson:gson:2.10.1")
+
+
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.kafka:spring-kafka-test")
 
