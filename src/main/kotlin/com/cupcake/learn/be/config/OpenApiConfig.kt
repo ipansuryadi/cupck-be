@@ -13,7 +13,7 @@ class OpenApiConfig {
             .info(
                 Info().title("Your API Title")
                     .description("Your API Description")
-                    .version("1.0")
+                    .version("1.0"),
             )
     }
 }

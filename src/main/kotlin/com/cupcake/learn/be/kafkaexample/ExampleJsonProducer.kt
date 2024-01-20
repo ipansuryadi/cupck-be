@@ -5,11 +5,9 @@ import org.springframework.stereotype.Component
 
 @Component
 class ExampleStringProducer(
-    private val kafkaTemplate: KafkaTemplate<String, String>
+    private val kafkaTemplate: KafkaTemplate<String, String>,
 ) {
-
     fun sendStringMessage(message: String) {
         kafkaTemplate.send(EXAMPLE_TOPIC_NAME, message)
     }
-
 }

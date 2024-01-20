@@ -15,18 +15,19 @@ class FirebasePublisherController(private val fcm: FirebaseMessaging) {
     @Throws(FirebaseMessagingException::class)
     fun postToClient(
         @RequestBody message: String?,
-        @PathVariable("registrationToken") registrationToken: String?
+        @PathVariable("registrationToken") registrationToken: String?,
     ): ResponseEntity<String> {
         val model = ModelUsingDataClass(id = "123", name = "ipan", age = 38)
-        //data class if we don't want to change val/var, also can use copy for cloning to new instance (method copy doesn't exist in ordinary class):
+        // data class if we don't want to change val/var, also can use copy for cloning to new instance (method copy doesn't exist in ordinary class):
         val modifiedModel = model.copy(age = 17)
         val gson = Gson()
         val jsonStringFromModel = gson.toJson(modifiedModel)
-        val msg = Message.builder()
-            .setToken(registrationToken)
-            .putData("data", jsonStringFromModel)
-            .putData("type", "NOTIFICATION_TYPE")
-            .build()
+        val msg =
+            Message.builder()
+                .setToken(registrationToken)
+                .putData("data", jsonStringFromModel)
+                .putData("type", "NOTIFICATION_TYPE")
+                .build()
 
         val id = fcm.send(msg)
         return ResponseEntity

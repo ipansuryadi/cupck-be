@@ -30,9 +30,10 @@ class FirebaseConfiguration(private val firebaseProperties: FirebaseProperties) 
 
     @Bean
     fun firebaseApp(credentials: GoogleCredentials?): FirebaseApp {
-        val options = FirebaseOptions.builder()
-            .setCredentials(credentials)
-            .build()
+        val options =
+            FirebaseOptions.builder()
+                .setCredentials(credentials)
+                .build()
 
         return FirebaseApp.initializeApp(options)
     }
